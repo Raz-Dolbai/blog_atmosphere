@@ -1,0 +1,30 @@
+{% extends 'base_admin.html' %}
+{% block title %}
+email
+{% endblock %}
+{% block div %}
+    <h1 align="center">Все люди, которые подписались на Вас.</h1>
+    <br>
+{% if email|length>0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">number</th>
+                <th scope="col">email</th>
+                <th scope="col">date</th>
+            </tr>
+        </thead>
+        {% for el in email %}
+        <tbody>
+            <tr>
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.email}}</td>
+                <td>{{el.date.date()}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>У нас еще нет статей на сайте</p>
+    {% endif %}
+{%endblock%}

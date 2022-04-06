@@ -1,0 +1,17 @@
+{% extends 'header&footer_base.html' %}
+{%block title%}
+{{ article.title }}
+{%endblock%}
+{% block div %}
+<div class="container post_detail">
+    <h1 style="text-align:center">{{ article.post_title }}</h1><br>
+    <img src="/static/img/{{article.name_img}}"  class="rounded mx-auto d-block" alt="...">
+    <div>
+        <p>{{article.card_text}}</p>
+        <p>{{article.post_text}}</p>
+        <b>Дата:{{article.date.date()}}</b>
+        <p align="right"><a href="/post/{{ article.id  }}/comment" class="link-more" >Оставить отзыв</a></p>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Playfair+Display&family=Ubuntu:wght@300&display=swap"
+            rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/323a639b2d.js" crossorigin="anonymous"></script>
+
+    <title>atmosphere</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Atmøsphere</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/lifestyle">Lifestyle</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/people">People</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/music">Music</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/travel">Travel</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container slider">
+    <div
+            id="slider"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+    >
+        <div class="carousel-indicators">
+            <button
+                    type="button"
+                    data-bs-target="#slider"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+            ></button>
+            <button
+                    type="button"
+                    data-bs-target="#slider"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button
+                    type="button"
+                    data-bs-target="#slider"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button
+                    type="button"
+                    data-bs-target="#slider"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='img/header_123.jpg') }}" class="d-block w-100" alt="..."/>
+            </div>
+            <div class="carousel-item">
+                <img
+                        src="https://picsum.photos/1062/501?grayscale"
+                        class="d-block w-100"
+                        alt="..."
+                />
+            </div>
+            <div class="carousel-item">
+                <img
+                        src="{{ url_for('static', filename='img/imgonline-com-ua-Resize-aaWRWH5FyW.jpg') }}"
+                        class="d-block w-100"
+                        alt="..."
+                />
+            </div>
+            <div class="carousel-item">
+                <img
+                        src="{{ url_for('static', filename='img/header4.jpg') }}"
+                        class="d-block w-100"
+                        alt="..."
+                />
+            </div>
+        </div>
+        <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#slider"
+                data-bs-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#slider"
+                data-bs-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="single-post">
+                <h3 class="post-category">Fotodiary</h3>
+                <h2 class="post-title">
+                    <a href="#">The perfect weekend gateway</a>
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                    provident doloribus maxime, odio cumque vitae molestias architecto
+                    asperiores temporibus quam voluptas quaerat quae ipsam optio
+                    explicabo eos consequatur tempore dolores ducimus. Laborum natus
+                    veniam optio odio! Placeat nam fugiat, ab doloribus doloremque
+                    nihil reiciendis dolorum. Deserunt modi rerum repellendus ab? Iure
+                    harum rem sed quaerat? Et, ad, odit temporibus fugit, alias optio
+                    dolorem ratione autem quis unde blanditiis quibusdam ipsa corrupti
+                    assumenda neque qui obcaecati at voluptatibus maxime enim? Alias
+                    vero quod quasi voluptatem quam. Quam aspernatur omnis provident
+                    reprehenderit odio eos ullam beatae doloremque? Fugiat numquam
+                    error quos hic.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="signup">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center">Sign up for our newsletter!</h3>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 form-input">
+                            <input type="email" name='email' class="form-control" placeholder="Email"
+                                   aria-label="First name">
+                            <button class="btn" type="submit">
+                                &#10146
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="grid-posts">
+    <div class="container">
+        <div class="row">
+
+            {% if articles|length>0 %}
+                {% for el in articles %}
+                    <div class="col-md-6">
+                        <div class="card">
+                            <a href="/posts/{{ el.id }}"><img src="static/img/{{ el.name_img }}" class="card-img-top"
+                                                              alt="..."></a>
+                            <div class="card-body">
+                                <h3 class="post-category">{{ el.post_category }}</h3>
+                                <h5 class="post-title">{{ el.post_title }}</h5>
+                                <p class="card-text">{{ el.card_text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+<footer>
+    <div class="container">
+        <div class="d-sm-flex justify-content-between">
+            <div class="footer-left">
+                <a href="#">Terms and conditions</a>
+                <a href="#">Privacy</a>
+                <a href="/login">Login</a>
+            </div>
+            <div class="footer-right">
+                <span>Follow</span>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+</html>

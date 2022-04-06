@@ -1,0 +1,25 @@
+{% extends 'base_admin.html' %}
+{%block title%}All posts{%endblock%}
+{% block div %}
+<div class="container mt-5 create_article">
+    <h1>Все статьи на сайте</h1>
+    {% if articles|length>0 %}
+        {% for el in articles %}
+        <div class="alert alert-secondary">
+            <h2>{{el.post_title}}</h2>
+            <p>Категория поста: {{el.post_category}}</p>
+            <p>{{el.card_text}}</p>
+            <p>Дата: {{el.date.date()}}</p>
+            <br>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example" float="right">
+                <a href="/posts/{{ el.id }}" class="btn btn-outline-secondary">Детальнее</a>
+                <a href="/posts/{{ el.id }}/delete"  class="btn btn-outline-secondary">Удалить</a>
+                <a href="/posts/{{ el.id }}/update"  class="btn btn-outline-secondary">Редактировать</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>У нас еще нет статей на сайте</p>
+    {% endif %}
+</div>
+{%endblock%}

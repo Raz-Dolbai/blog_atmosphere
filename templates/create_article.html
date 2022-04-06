@@ -1,0 +1,22 @@
+{% extends 'base_admin.html' %}
+{%block title%}Create article{%endblock%}
+{% block div %}
+<div class="container mt-5 create_article">
+    <h1 style="text-align:center">Добавление статьи</h1><br>
+    <form enctype="multipart/form-data" method="post">
+        <select class="form-select" name="post_category" aria-label="post_category" required>
+            <option selected>Выберите категорию поста</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="People">People</option>
+            <option value="Music">Music</option>
+            <option value="Travel">Travel</option>
+        </select>
+        <br>
+        <input type="text" name="post_title" id="post_title" class="form-control" placeholder="Введите заголовок поста"><br>
+        <input type="file" name="name_img" id="name_img" class="form-control"><br>
+        <textarea  name="card_text" id="card_text" class="form-control" placeholder="Введите краткое описание"></textarea><br>
+        <textarea  name="post_text" id="post_text" class="form-control" placeholder="Введите текст статьи"></textarea><br>
+        <input type="submit" class="btn btn-outline-secondary" value="Добавить"><br>
+    </form>
+</div>
+{%endblock%}

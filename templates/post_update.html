@@ -1,0 +1,24 @@
+{% extends 'header&footer_base.html' %}
+{%block title%}Update article{%endblock%}
+{% block div %}
+<div class="container mt-5 create_article">
+    <h1 style="text-align:center">Редактирование статьи</h1><br>
+    <form enctype="multipart/form-data" method="post">
+        <select class="form-select" name="post_category" aria-label="post_category" value='{{ article.post_category }}' required>
+            <option selected>Выберите категорию поста</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="People">People</option>
+            <option value="Music">Music</option>
+            <option value="Travel">Travel</option>
+        </select>
+        <br>
+        <input type="text" name="post_title" id="post_title" class="form-control" value='{{ article.post_title }}' placeholder="Введите заголовок поста"><br>
+        <input type="file" name="name_img" id="name_img" value ='{{ file }}' class="form-control"><br>
+        <textarea  name="card_text" id="card_text" class="form-control" placeholder="Введите краткое описание">{{ article.card_text }}</textarea><br>
+        <textarea  name="post_text" id="post_text" class="form-control" placeholder="Введите текст статьи"> {{ article.post_text }}</textarea><br>
+        <input type="submit" class="btn btn-outline-secondary" value="Редактировать"><br>
+    </form>
+</div>
+{%endblock%}
+
+

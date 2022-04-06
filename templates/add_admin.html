@@ -1,0 +1,65 @@
+{% extends 'base_admin.html' %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block div %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    <div class="authorization" >
+        <h1 align="center">Добавить админа</h1>
+        <form action="" method="post" novalidate >
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+    <div>
+    <h1 align="center">
+        Уже добавленные администраторы
+    </h1>
+    <br>
+    {% if email|length>0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">number</th>
+                <th scope="col">email</th>
+            </tr>
+        </thead>
+        {% for el in email %}
+        <tbody>
+            <tr>
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.email}}</td>
+                <td> <a href="/add_admin/{{ el.id }}/delete"  class="btn btn-secondary">Удалить пользователя</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>У нас еще нет статей на сайте</p>
+    {% endif %}
+    </div>
+
+{%endblock%}
