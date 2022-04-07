@@ -1,7 +1,7 @@
 
 <h3 align='center'>Интернет-блог.</h3>
 <br>
-[https://atmosphere-project.herokuapp.com/]
+https://atmosphere-project.herokuapp.com/
 <br>
 Реализована админ панель 
 для входа на футуре перейти на страницу login
